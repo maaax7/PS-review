@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Calcula compras de sofás</string>
+    <string-array name="revestimentos">
+        <item>Tecido</item>
+        <item>Courino</item>
+        <item>Couro</item>
+    </string-array>
+</resources>

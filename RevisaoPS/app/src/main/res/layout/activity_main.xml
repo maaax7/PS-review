@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.com.fiap.revisaops.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sofás:"
+        android:layout_marginTop="30dp"
+        android:id="@+id/lblSofa"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Revestimentos:"
+        android:id="@+id/lblRevestimento"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/spnSofa"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:id="@+id/spnSofa"
+        android:layout_alignTop="@+id/lblSofa"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:id="@+id/spnRevestimento"
+        android:entries="@array/revestimentos"
+        android:layout_alignTop="@+id/lblRevestimento"
+        android:layout_alignStart="@+id/spnSofa" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/spnRevestimento"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/rgLugares"
+        android:layout_toStartOf="@+id/spnRevestimento">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03 Lugares"
+            android:id="@+id/rb3"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="04 Lugares"
+            android:id="@+id/rb4"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06 Lugares"
+            android:id="@+id/rb6"
+            android:checked="false" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Quantidade:"
+        android:id="@+id/lblQuantidade"
+        android:layout_below="@+id/rgLugares"
+        android:layout_alignEnd="@+id/lblRevestimento" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/txtQtd"
+        android:layout_below="@+id/rgLugares"
+        android:layout_toEndOf="@+id/rgLugares" />
+
+    <CheckBox
+        android:layout_width="1000dp"
+        android:layout_height="wrap_content"
+        android:text="Cliente Preferencial"
+        android:id="@+id/ckCliente"
+        android:layout_below="@+id/txtQtd"
+        android:layout_toStartOf="@+id/txtQtd"
+        android:layout_marginTop="27dp"
+        android:checked="false"
+        android:layout_alignEnd="@+id/txtQtd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Valor do Sofá:"
+        android:id="@+id/lblValorSofa"
+        android:layout_below="@+id/ckCliente"
+        android:layout_alignEnd="@+id/lblQuantidade" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/lblResultado"
+        android:layout_below="@+id/ckCliente"
+        android:layout_alignStart="@+id/txtQtd"
+        android:layout_alignEnd="@+id/txtQtd"
+        android:layout_alignBottom="@+id/lblValorSofa" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:id="@+id/btnCalcular"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/lblValorSofa" />
+</RelativeLayout>
